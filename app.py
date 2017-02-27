@@ -40,7 +40,7 @@ XML_FILE_CONTENT = string.Template("""<?xml version='1.0' encoding='UTF-8'?>
 )
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='')
 
 
 @app.route("/xml")
