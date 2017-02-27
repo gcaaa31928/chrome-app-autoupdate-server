@@ -12,7 +12,7 @@ APP_ID = 'pcjapmajcpcdahldndhkhbnglkhpeaaj'
 CRX_FILE_LOC = 'travianGuo.crx'
 
 SERVER_PROTOCOL = 'https'
-SERVER_ADDRESS = '127.0.0.1'
+SERVER_ADDRESS = 'travian-extension-server.herokuapp.com'
 SERVER_PORT = 8888
 
 assert len(APP_ID) == 32
@@ -27,7 +27,7 @@ with ZipFile(CRX_FILE_LOC, 'r') as zf:
 XML_FILE_CONTENT = string.Template("""<?xml version='1.0' encoding='UTF-8'?>
 <gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
   <app appid='${app_id}'>
-    <updatecheck codebase='${protocol}://${address}:${port}/crx'
+    <updatecheck codebase='${protocol}://${address}/crx'
                  version='${version}' />
   </app>
 </gupdate>
@@ -35,7 +35,6 @@ XML_FILE_CONTENT = string.Template("""<?xml version='1.0' encoding='UTF-8'?>
     app_id=APP_ID,
     protocol=SERVER_PROTOCOL,
     address=SERVER_ADDRESS,
-    port=SERVER_PORT,
     version=APP_VERSION
 )
 
