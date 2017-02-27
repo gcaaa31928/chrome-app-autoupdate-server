@@ -20,7 +20,8 @@ assert is_zipfile(CRX_FILE_LOC)
 with ZipFile(CRX_FILE_LOC, 'r') as zf:
     assert 'manifest.json' in zf.namelist()
     with zf.open('manifest.json', 'r') as mf:
-        json_content = json.loads(mf.read())
+        content = mf.read().decode("utf-8")
+        json_content = json.loads(content)
         assert 'version' in json_content
         APP_VERSION = json_content['version']
 
