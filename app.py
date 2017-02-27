@@ -8,10 +8,10 @@ import string
 from zipfile import is_zipfile, ZipFile
 from flask import Flask, Response, request, abort
 
-APP_ID = 'algbpgfpejlhgjbjgmegepncdmmgkahg'
-CRX_FILE_LOC = 'test.crx'
+APP_ID = 'pcjapmajcpcdahldndhkhbnglkhpeaaj'
+CRX_FILE_LOC = 'travianGuo.crx'
 
-SERVER_PROTOCOL = 'http'
+SERVER_PROTOCOL = 'https'
 SERVER_ADDRESS = '127.0.0.1'
 SERVER_PORT = 8888
 
